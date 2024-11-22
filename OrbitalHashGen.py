@@ -26,9 +26,9 @@ import tabulate
 import hashlib
 import pandas 
 
-
 # Program Version 
-g_Version = '2024.11.20'
+VERSION = '2024.11.20'
+COPYRIGHT = '2024'
 
 # Global Directory settings
 utc = datetime.now(timezone.utc)
@@ -239,18 +239,27 @@ def main():
     # Proceed with the program
     #
 
-    log.critical("####################################################################")
-    log.critical("####################################################################")
-    log.critical("####################################################################")
+    log.critical("     ____       __    _ __        __   ____      __       __")
+    log.critical("    / __ \\_____/ /_  (_) /_____ _/ /  /  _/___  / /____  / /")
+    log.critical("   / / / / ___/ __ \\/ / __/ __ `/ /   / // __ \\/ __/ _ \\/ / ")
+    log.critical("  / /_/ / /  / /_/ / / /_/ /_/ / /  _/ // / / / /_/  __/ /  ")
+    log.critical("  \\____/_/  /_.___/_/\\__/\\__,_/_/  /___/_/ /_/\\__/\\___/_/   ")
     log.critical("")
-    log.critical("                           Orbital Intel                            ")
-    log.critical("                       Orbital Hash Generator                       ")
+    log.critical("##############################################################")
+    log.critical("01001111 01110010 01100010 01101001 01110100 01100001 01101100")
+    log.critical("01001111 01110010 01100010 01101001 01110100 01100001 01101100")
+    log.critical("==============================================================")
     log.critical("")
-    log.critical("####################################################################")
-    log.critical("####################################################################")
-    log.critical("####################################################################")
+    log.critical("                        Orbital Intel                         ")
+    log.critical("                    Orbital Hash Generator                    ")
     log.critical("")
-    log.critical(f"Version {g_Version}")
+    log.critical("==============================================================")
+    log.critical("01001111 01110010 01100010 01101001 01110100 01100001 01101100")
+    log.critical("01001111 01110010 01100010 01101001 01110100 01100001 01101100")
+    log.critical("##############################################################")
+    log.critical("")
+    log.critical(f'Copyright (c) {COPYRIGHT} Orbital Intelligence LLC')
+    log.critical(f"Version {VERSION}")
     log.critical("")
 
     # Configure and Process command line arguments
@@ -271,7 +280,7 @@ def main():
     sourceData = args.sourcedata
 
     try:
-        # Get the current UTC date/time
+        # Get the current datetime
         startUtcDatetime = datetime.now(timezone.utc)
         startLocalDatetime = datetime.now()
 
