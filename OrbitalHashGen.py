@@ -32,8 +32,8 @@ COPYRIGHT = '2024'
 
 # Global Directory settings
 utc = datetime.now(timezone.utc)
-directoryDate = utc.strftime("%Y.%m.%d_%H.%M") 
-filenameDateTime = utc.strftime("%Y.%m.%d_%H.%M.%S") 
+directoryDate = utc.strftime('%Y.%m.%d_%H.%M') 
+filenameDateTime = utc.strftime('%Y.%m.%d_%H.%M.%S') 
 baseDirectory = os.path.join(os.getcwd(), 'OrbitalHashGen_Artifacts', directoryDate)
 logsDirectory = baseDirectory
 
@@ -42,8 +42,8 @@ log = logging.getLogger(__name__)
 
 # Constants
 LOG_FILENAME = os.path.join(logsDirectory, f'OrbitalHashGenLog_{filenameDateTime}z.log')
-ORBITAL_GUARDIAN_EXCEL_FILE = f'OrbitalHashGen_{filenameDateTime}z.xlsx'
-ORBITAL_GUARDIAN_EXCEL_FILENAME = os.path.join(logsDirectory, ORBITAL_GUARDIAN_EXCEL_FILE)
+ORBITAL_HASHGEN_EXCEL_FILE = f'OrbitalHashGen_{filenameDateTime}z.xlsx'
+ORBITAL_HASHGEN_EXCEL_FILENAME = os.path.join(logsDirectory, ORBITAL_HASHGEN_EXCEL_FILE)
 
 #
 # Class for generating standard crytographic hashes
@@ -239,37 +239,37 @@ def main():
     # Proceed with the program
     #
 
-    log.critical("     ____       __    _ __        __   ____      __       __")
-    log.critical("    / __ \\_____/ /_  (_) /_____ _/ /  /  _/___  / /____  / /")
-    log.critical("   / / / / ___/ __ \\/ / __/ __ `/ /   / // __ \\/ __/ _ \\/ / ")
-    log.critical("  / /_/ / /  / /_/ / / /_/ /_/ / /  _/ // / / / /_/  __/ /  ")
-    log.critical("  \\____/_/  /_.___/_/\\__/\\__,_/_/  /___/_/ /_/\\__/\\___/_/   ")
-    log.critical("")
-    log.critical("##############################################################")
-    log.critical("01001111 01110010 01100010 01101001 01110100 01100001 01101100")
-    log.critical("01001111 01110010 01100010 01101001 01110100 01100001 01101100")
-    log.critical("==============================================================")
-    log.critical("")
-    log.critical("                        Orbital Intel                         ")
-    log.critical("                    Orbital Hash Generator                    ")
-    log.critical("")
-    log.critical("==============================================================")
-    log.critical("01001111 01110010 01100010 01101001 01110100 01100001 01101100")
-    log.critical("01001111 01110010 01100010 01101001 01110100 01100001 01101100")
-    log.critical("##############################################################")
-    log.critical("")
+    log.critical('     ____       __    _ __        __   ____      __       __')
+    log.critical('    / __ \\_____/ /_  (_) /_____ _/ /  /  _/___  / /____  / /')
+    log.critical('   / / / / ___/ __ \\/ / __/ __ `/ /   / // __ \\/ __/ _ \\/ / ')
+    log.critical('  / /_/ / /  / /_/ / / /_/ /_/ / /  _/ // / / / /_/  __/ /  ')
+    log.critical('  \\____/_/  /_.___/_/\\__/\\__,_/_/  /___/_/ /_/\\__/\\___/_/   ')
+    log.critical('')
+    log.critical('##############################################################')
+    log.critical('01001111 01110010 01100010 01101001 01110100 01100001 01101100')
+    log.critical('00100000 01001001 01101110 01110100 01100101 01101100 00000000')
+    log.critical('==============================================================')
+    log.critical('')
+    log.critical('                        Orbital Intel                         ')
+    log.critical('                    Orbital Hash Generator                    ')
+    log.critical('')
+    log.critical('==============================================================')
+    log.critical('01001111 01110010 01100010 01101001 01110100 01100001 01101100')
+    log.critical('00100000 01001001 01101110 01110100 01100101 01101100 00000000')
+    log.critical('##############################################################')
+    log.critical('')
     log.critical(f'Copyright (c) {COPYRIGHT} Orbital Intelligence LLC')
-    log.critical(f"Version {VERSION}")
-    log.critical("")
+    log.critical(f'Version {VERSION}')
+    log.critical('')
 
     # Configure and Process command line arguments
-    parser = argparse.ArgumentParser(description="OrbitalHashGen - Orbital Intel Hash Generation Utility\
-	\n\nGenerates standard cryptographic hashes for string data (such as passwords) to facilitate Orbital Intelligence research and analysis."
+    parser = argparse.ArgumentParser(description='OrbitalHashGen - Orbital Intel Hash Generation Utility\
+	\n\nGenerates standard cryptographic hashes for string data (such as passwords) to facilitate Orbital Intelligence research and analysis.'
 		, prog='OrbitalHashGen.py'
 		, formatter_class=RawTextHelpFormatter)
 
     parser.add_argument('sourcedata', help=f'Provide the data to be hashed')
-    parser.add_argument("--verbose",  "-v", action="store_true", help="Flag to display verbose output \nVerbose output is disabled by default")
+    parser.add_argument('--verbose',  '-v', action='store_true', help='Flag to display verbose output \nVerbose output is disabled by default')
     args = parser.parse_args()
 
     # Apply the verbose output setting
@@ -286,8 +286,8 @@ def main():
 
         # Display program configuration data
         log.critical('')
-        log.debug(f"Source Data:       {len(sourceData)}")
-        log.critical(f"Excel Output File: {os.path.basename(ORBITAL_GUARDIAN_EXCEL_FILENAME)}")
+        log.debug(f'Source Data:       {len(sourceData)}')
+        log.critical(f'Excel Output File: {os.path.basename(ORBITAL_HASHGEN_EXCEL_FILENAME)}')
         log.critical('')
 
         # Generate Hashes
@@ -296,7 +296,7 @@ def main():
         objHashData.GenerateHashes()
 
         # Generate Excel results file
-        GenerateHashArtifactExcelFile(objHashGen=objHashData, destFile=ORBITAL_GUARDIAN_EXCEL_FILENAME)
+        GenerateHashArtifactExcelFile(objHashGen=objHashData, destFile=ORBITAL_HASHGEN_EXCEL_FILENAME)
 
         # Print hash data details to console
         PrintHashData(objHashGen=objHashData)
@@ -327,7 +327,7 @@ def main():
         log.debug('')
         log.critical(f'OrbitalHashGen processing time:   {executionTime} ')
         log.critical('')
-        log.critical(f'Excel file:  {ORBITAL_GUARDIAN_EXCEL_FILENAME}')
+        log.critical(f'Excel file:  {ORBITAL_HASHGEN_EXCEL_FILENAME}')
         log.critical('')
         log.critical(f'Log file:    {LOG_FILENAME}')
         log.critical('')
@@ -336,7 +336,7 @@ def main():
         log.critical('######################################################')
 
 
-if __name__ == "__main__":
+if __name__ == '__main__':
     main()
 
 
